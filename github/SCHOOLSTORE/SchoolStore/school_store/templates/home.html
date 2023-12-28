@@ -1,0 +1,85 @@
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>School Store </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">School Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="btn btn-outline-success" href="{% url 'store_app:login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="btn btn-outline-success ms-2" href="{% url 'store_app:register' %}">Register</a>
+            </li>
+          <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Department
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a></li>
+        <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Commerce">Commerce</a></li>
+        <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Arts_in_education">Arts</a></li>
+        <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Management">Management</a></li>
+        <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Science">Science</a></li>
+    </ul>
+</li>
+
+      </ul>
+         <form class="d-flex" role="search" method="post">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+    </div>
+</nav>
+
+ <div class="container">
+  {% include 'header.html' %}
+</div>
+<div>
+        <center><img class="my_image my_image_padding" src="{% static 'banner-1 yen.jpg' %}" alt="Banner Image"></center>
+    </div><br>
+<div class="container">
+    <h2 class="section-heading">About Us</h2>
+    <p>“Yenepoya (Deemed to be University) brings you a world-class educational experience in the pristine surroundings of a tranquil south Indian town. Nature is the closest companion on the campus that houses institutes offering the best in education. Come explore Yenepoya and evolve into a technology-enabled future.”</p>
+</div>
+
+<div class="container">
+    <h2 class="section-heading">Mission</h2>
+    <ul>
+        <li>To foster academic excellence and global competencies among students.</li>
+        <li>To create an environment for the generation of new knowledge through meaningful research, adopting latest methods of pedagogy and incorporating modern principles of academics integrated with highest ethical standards.</li>
+        <li>To extend the knowledge acquired and new knowledge generated for the development of the community.</li>
+    </ul>
+</div>
+
+<div class="container">
+    <h2 class="section-heading">Vision</h2>
+    <p>To provide access to quality higher education, ensuring equity to create a vibrant knowledge capital and to create inspiring leaders of tomorrow who can take this country to the forefront of developed nations.</p>
+</div>
+
+<footer class="footer mt-auto py-3 bg-dark text-white">
+    <div class="container text-center">
+        <span>2023 yenepoya.edu.in, Mangalore|All rights reserved.</span>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
